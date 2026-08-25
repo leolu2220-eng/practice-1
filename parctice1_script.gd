@@ -23,3 +23,5 @@ func update_UI() ->void:
 	else:
 		$Label2.text = "Relationship:" + "stranger"
 		$Label3.text= "I cannot belief a stranger"
+		
+var atest = "no"
