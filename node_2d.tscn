@@ -1,0 +1,83 @@
+[gd_scene format=3 uid="uid://dqrqxnv2ybq0w"]
+
+[ext_resource type="Script" uid="uid://yftdfffmrews" path="res://player.gd" id="1_0e48y"]
+[ext_resource type="Texture2D" uid="uid://dksbb1hwbyf1j" path="res://icon.svg" id="2_epypp"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mpnxv"]
+size = Vector2(129, 131)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hrf8i"]
+size = Vector2(1079.75, 10.25)
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_kwl56"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0e48y"]
+size = Vector2(1079.75, 10.25)
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_hrf8i"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_epypp"]
+size = Vector2(10, 1920)
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_mpnxv"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0hol4"]
+size = Vector2(10, 1920)
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_62ogx"]
+
+[node name="Node2D" type="Node2D" unique_id=1455100897]
+
+[node name="Player" type="CharacterBody2D" parent="." unique_id=75630991]
+script = ExtResource("1_0e48y")
+
+[node name="Sprite2D" type="Sprite2D" parent="Player" unique_id=1760601988]
+position = Vector2(106, 106)
+texture = ExtResource("2_epypp")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player" unique_id=721512812]
+position = Vector2(105.5, 105.5)
+shape = SubResource("RectangleShape2D_mpnxv")
+
+[node name="wall1" type="StaticBody2D" parent="." unique_id=1447851906]
+
+[node name="wallbuttom" type="CollisionShape2D" parent="wall1" unique_id=744645123]
+position = Vector2(540, 1915.125)
+shape = SubResource("RectangleShape2D_hrf8i")
+debug_color = Color(0.22891107, 0.5585224, 0.82880664, 0.41960785)
+
+[node name="Sprite2D" type="Sprite2D" parent="wall1/wallbuttom" unique_id=1381624627]
+modulate = Color(0.2831056, 0.23159516, 0.09763951, 1)
+scale = Vector2(1080, 9.999859)
+texture = SubResource("CanvasTexture_kwl56")
+
+[node name="walltop" type="CollisionShape2D" parent="wall1" unique_id=1677966515]
+position = Vector2(540, 5)
+shape = SubResource("RectangleShape2D_0e48y")
+debug_color = Color(0.22891107, 0.5585224, 0.82880664, 0.41960785)
+
+[node name="Sprite2D" type="Sprite2D" parent="wall1/walltop" unique_id=1685284442]
+position = Vector2(-1.603365e-05, -1.1920929e-07)
+scale = Vector2(1080, 10)
+texture = SubResource("CanvasTexture_hrf8i")
+
+[node name="wall2" type="StaticBody2D" parent="." unique_id=884859639]
+
+[node name="wallleft" type="CollisionShape2D" parent="wall2" unique_id=114037028]
+position = Vector2(5, 960)
+shape = SubResource("RectangleShape2D_epypp")
+debug_color = Color(0.22891107, 0.5585224, 0.82880664, 0.41960785)
+
+[node name="Sprite2D" type="Sprite2D" parent="wall2/wallleft" unique_id=992443809]
+modulate = Color(0.40392157, 0.28627452, 0.11372549, 1)
+scale = Vector2(10, 1920)
+texture = SubResource("CanvasTexture_mpnxv")
+
+[node name="wallright" type="CollisionShape2D" parent="wall2" unique_id=981130182]
+position = Vector2(1075, 960)
+shape = SubResource("RectangleShape2D_0hol4")
+debug_color = Color(0.22891107, 0.5585224, 0.82880664, 0.41960785)
+
+[node name="Sprite2D" type="Sprite2D" parent="wall2/wallright" unique_id=1733788511]
+scale = Vector2(10, 1920)
+texture = SubResource("CanvasTexture_62ogx")
